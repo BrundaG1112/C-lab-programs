@@ -1,0 +1,14 @@
+write a program in c++ to check whether the number is positive. if yes print the number is greater than 0
+
+#include <iostream> 
+using namespace std; 
+
+int main() 
+{ 
+	int i = -10; 
+
+	if (i > 0) { 
+		cout << "greater than 0"; 
+	} 
+
+}
