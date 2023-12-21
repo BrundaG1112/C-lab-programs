@@ -1,0 +1,39 @@
+#include <iostream>
+
+// Base class
+class Base {
+public:
+    void publicFunction() {
+        std::cout << "Public function in Base class" << std::endl;
+    }
+
+    // Private member of the base class
+private:
+    void privateFunction() {
+        std::cout << "Private function in Base class" << std::endl;
+    }
+};
+
+// Derived class publicly inherits from Base
+class Derived : public Base {
+public:
+    void derivedFunction() {
+        // Accessing the public member of the base class
+        publicFunction(); // This is valid
+
+        // Attempting to access the private member of the base class
+        //privateFunction(); // Uncommenting this line will result in a compilation error
+    }
+};
+
+int main() {
+    Derived derivedObject;
+
+    // Accessing the public member of the base class from the object of the derived class
+    derivedObject.publicFunction(); // This is valid
+
+    // Attempting to access the private member of the base class
+    // derivedObject.privateFunction(); // Uncommenting this line will result in a compilation error
+
+    return 0;
+}
